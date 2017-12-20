@@ -1,0 +1,2 @@
+
+int sendToSrv(char *msg);

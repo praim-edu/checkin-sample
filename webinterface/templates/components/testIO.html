@@ -1,0 +1,48 @@
+{% extends "dashboard/base.html" %}
+{% load staticfiles %}
+
+
+{% block extrahead %}
+
+<!-- Social Buttons CSS -->
+<link href="{% static "bower_components/bootstrap-social/bootstrap-social.css" %}" rel="stylesheet">
+
+{% endblock extrahead %}
+
+
+{% block content %}
+<div class="row">
+    <div class="col-lg-12">
+        <h1 class="page-header">Test</h1>
+    </div>
+    <!-- /.col-lg-12 -->
+</div>
+<!-- /.row -->
+<div class="row">
+    <div class="col-lg-6">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                Output
+            </div>
+            <!-- /.panel-heading -->
+            <div class="panel-body">
+                <p>
+                    <form method="post">
+                        {% csrf_token %}
+                        <input type="submit" name="idl" value="Idle" class="btn btn-default"></input>
+                        <input type="submit" name="suc" value="Success" class="btn btn-success"></input>
+                        <input type="submit" name="chk" value="Checking" class="btn btn-info"></input>
+                        <input type="submit" name="fld" value="Failed" class="btn btn-danger"></input>
+                        <input type="submit" name="sip" value="Show Ip" class="btn btn-primary"></input>
+                    </form>
+                </p>
+            </div>
+            <!-- /.panel-body -->
+        </div>
+        <!-- /.panel -->
+    </div>
+    <!-- /.col-lg-6 -->
+</div>
+<!-- /.row -->
+    
+{% endblock content %}
